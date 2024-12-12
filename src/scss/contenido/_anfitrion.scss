@@ -38,7 +38,7 @@
     }
     &__enlace {
         @include m.boton(v.$blanco, v.$negro);
-        border-radius: .5rem;
-        padding: 1rem 1.5rem;
+        &{border-radius: 0.5rem; /* para indicar que corresponde a una modificacion de lo anterior */
+        padding: 1rem 1.5rem;}
     }
 }
