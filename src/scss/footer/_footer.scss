@@ -1,0 +1,66 @@
+@use 'base/mixins' as m; 
+@use 'base/variables' as v;
+@use "sass:color";
+
+.footer {
+    background-color: color.adjust(v.$grisClaro, $lightness: 7%);
+    border-top: 1px solid color.adjust(v.$gris, $lightness: 40%);
+    padding-top: 5rem;
+    justify-content: center;
+
+    &__grid {
+        @include m.telefono { 
+            @include m.grid(2, 2rem);
+        };
+        @include m.tablet { 
+            @include m.grid(4, 2rem);
+        };
+    }
+
+    &__heading {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__widget {
+
+    }
+
+    &__enlace {
+        color: v.$gris;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    &__barra {
+        border-top: 1px solid color.adjust(v.$gris, $lightness: 40%);
+        margin-top: 2rem;
+        padding: 2rem 0;
+    }
+
+    &__barranav {
+        display: flex;
+        flex-direction: column;
+
+        @include m.telefono { 
+            flex-direction: row;
+            justify-content: center;
+            gap: 2rem;
+        };
+    }
+
+    &__enlace--barra {
+        margin: 0;
+
+        &::before {
+            content: ' - ';
+            margin-right: .5rem;
+        }
+    }
+}
